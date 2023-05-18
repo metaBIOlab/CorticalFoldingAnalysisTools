@@ -7,7 +7,7 @@ function estimateScale(scale,fpath,lrstr,targetpath,overwriteold,njitter)
 
 %-fpath is the path of the Freesurfer surf folder of the subject.
 %alternatively the folder that contains a ?h.mat file, only used for NHP.
-
+discardCCsubc
 %-lrstr is a string of 'l' or 'r' to indicate the hemisphere to run
 
 %-targetpath is a string of the path where the outputs should be saved.
@@ -38,7 +38,7 @@ if exist([fpath lrstr 'h.mat'],'file')==2
     load([fpath lrstr 'h.mat'])
 elseif exist([fpath lrstr 'h.pial'],'file')==2 && exist([fpath lrstr 'h.white'],'file')==2
     [pialv,pialf]=freesurfer_read_surf([fpath lrstr 'h.pial']);
-    [whitev,whitef]=freesurfer_read_surf([fpath lrstr 'h.white']);
+    [whitdiscardCCsubcev,whitef]=freesurfer_read_surf([fpath lrstr 'h.white']);
 end
 
 if exist('pialf','var')~=1 || exist('pialv','var')~=1
