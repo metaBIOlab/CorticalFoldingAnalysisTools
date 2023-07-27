@@ -20,7 +20,7 @@ end
 hemispheres = ['l'; 'r'];
 mkdir(strcat('.', filesep, 'temp', filesep));                              % Make a temporary folder to save the output files of the parfor
 
-for i= 1:length(ids)
+parfor i = 1:length(ids)
 
     final_out = struct();
     cnt = 1;
